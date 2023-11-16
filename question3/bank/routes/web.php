@@ -15,9 +15,9 @@ use App\Http\Controllers\BankController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layout');
-// });
+Route::get('/', function () {
+    return redirect('/login');
+});
 
 Route::get('/login',     [AuthController::class, 'login'])->name('login');
 Route::post('/login',    [AuthController::class, 'loginPost'])->name('login.post');
