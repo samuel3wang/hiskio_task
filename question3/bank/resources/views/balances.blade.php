@@ -15,9 +15,6 @@
             </thead>
             <tbody>
                 <tr>
-                <td>{{auth()->user()->id}}</td>
-                <td>{{auth()->user()->account}}</td>
-                <td>{{auth()->user()->balance}}</td>
 
                 </tr>
             </tbody>
