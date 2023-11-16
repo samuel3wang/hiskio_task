@@ -19,7 +19,7 @@
                 <td>{{auth()->user()->id}}</td>
                 <td>{{auth()->user()->account}}</td>
                 <td>{{auth()->user()->balance}}</td>
-
+                <td><a href="{{ route('balances', ['id' => auth()->user()->id]) }}">Link</a></td>
                 </tr>
             </tbody>
         </table>
