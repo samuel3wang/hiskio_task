@@ -29,6 +29,5 @@
                 @endforeach
             </tbody>
         </table>
-        <!-- <a href="{{ route('operate') }}" class="btn btn-primary">Operate</a> -->
     </div>
 @endsection

@@ -16,8 +16,8 @@ class BankController extends Controller
         $total = [];
         foreach ($accounts as $account) {
 
+            // Get the latest balance for each account
             $latestBalance = Balance::where('account_id', $account->id)->latest('created_at')->first();
-
             $total[$account->id] = $latestBalance;
         }
 
@@ -30,17 +30,15 @@ class BankController extends Controller
         $balances = $account->balances;
         session(['id' => $id]);
 
-        $totalBalance = $account->balances->sum('balance');
-
-        return view('balances', compact('account', 'balances', 'totalBalance'));
+        return view('balances', compact('account', 'balances'));
     }
 
     public function operate() {
         return view('operate');
     }
 
-    public function operatePost(Request $request) {
-
+    public function operatePost(Request $request) 
+    {
         $method = $request->input('method');
         $amount = $request->input('amount');
         
