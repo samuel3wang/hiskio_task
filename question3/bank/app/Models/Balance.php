@@ -12,7 +12,7 @@ class Balance extends Model
     protected $table = 'balances';
 
     protected $fillable = [
-        'type',
+        'method',
         'amount',
         'balance'
     ];

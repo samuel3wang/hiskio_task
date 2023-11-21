@@ -15,5 +15,10 @@ class Account extends Model
         'account',
         'password',
     ];
+    
+    public function balances()
+    {
+        return $this->hasMany(Balance::class);
+    }
 
 }

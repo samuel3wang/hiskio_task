@@ -25,9 +25,13 @@ Route::get('/register',  [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerPost'])->name('register.post');
 Route::get('/logout',    [AuthController::class, 'logout'])->name('logout');
 
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/accounts',       [BankController::class, 'accounts'])->name('accounts');
-
+    
     Route::get('/accounts/{id}',  [BankController::class, 'balances'])->name('balances');
-    Route::post('/accounts/{id}', [BankController::class, 'balancesPost'])->name('balances.post');
+    // Route::post('/accounts/{id}', [BankController::class, 'balancesPost'])->name('balances.post');
+
+    Route::get('/operate',        [BankController::class, 'operate'])->name('operate');
+    Route::post('/operate',       [BankController::class, 'operatePost'])->name('operate.post');
 });

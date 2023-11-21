@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('balances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('account_id')->constrained();
-            $table->string('type');
-            $table->decimal('amount', 10, 2);
-            $table->decimal('balance', 10, 2);
+            $table->string('method');
+            $table->decimal('amount', 10);
+            $table->decimal('balance', 10);
             $table->timestamps();
         });
     }

@@ -27,7 +27,7 @@ class AuthController extends Controller
         if(Auth::attempt($credentials)) {
             return redirect()->intended('accounts');
         }
-        return redirect(route('login'))->with("error", "Account or password is incorrect");
+        return redirect(route('login'))->with("error", "Account or Password is incorrect");
     }
 
     function registerPost(Request $request) {
